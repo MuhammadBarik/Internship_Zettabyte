@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- HERO HEADER SECTION --- */
+        .hero-section {
+            background-color: #272d54; /* Warna biru gelap sesuai gambar */
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px 180px 20px;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            max-width: 500px;
+            margin: 0 auto;
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        .pricing-container {
+            max-width: 1000px;
+            margin: -120px auto 60px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #ffffff;
+            flex: 1;
+            min-width: 260px;
+            max-width: 300px;
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.2s ease;
+            border: 3px solid transparent;
+        }
+
+        .card:hover {
+            transform: scale(1.0s);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 25);
+            z-index: 2;
+        }
+
+        .card.selected {
+            border: 2px;
+            box-shadow: 0 15px 20px rgba(0, 150, 230, 0.2);
+        }
+
+        .card-header {
+            background-color: #57595B;
+            color: #ffffff;
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header .save-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 40px 30px;
+            flex-grow: 1;
+        }
+        .price-box {
+            margin-bottom: 30px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+        .price-box .currency {
+            font-size: 1.2rem;
+            align-self: flex-start;
+            margin-top: 5px;
+            margin-right: 2px;
+            font-weight: 300;
+        }
+
+        .price-box .amount {
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .price-box .period {
+            font-size: 0.85rem;
+            color: #888;
+            margin-left: 5px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #ffffff;
+            width: 80%;
+            margin-left: 5px;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 35px;
+            font-size: 0.85rem;
+            color: #57595B;
+        }
+
+        .features-list .li {
+            margin-bottom: 8px;
+        }
+
+        .features-list .li .strong {
+            color: #111;
+        }
+
+        .btn-buy {
+            display: block;
+            background-color: #1581BF;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 60px auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            display: flex;
+            gap: 40px;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        .faq-item {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <h1>Simple Pricing!</h1>
+        <p>The most advanced customer support tools with a simple and affordable pricing. And you can always try for 30 days, free!</p>
+    </header>
+
+    <main class="pricing-container">
+        
+        <div class="card">
+            <div class="card-header">
+                <span>BASIC</span>
+            </div>
+            <div class="card-body">
+                <div class="price-box">
+                    <span class="currency">$</span>
+                    <span class="amount">4</span>
+                    <span class="period">/ month</span>
+                </div>
+                <div class="divider"></div>
+                <ul class="features-list">
+                    <li><strong>10</strong> Projects</li>
+                    <li><strong>10</strong> Pages</li>
+                    <li><strong>100</strong> Mb Disk Space</li>
+                </ul>
+                <a href="#" class="btn-buy">BUY NOW</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>STANDARD</span>
+                <span class="save-badge">Save 15%</span>
+            </div>
+            <div class="card-body">
+                <div class="price-box">
+                    <span class="currency">$</span>
+                    <span class="amount">8</span>
+                    <span class="period">/ month</span>
+                </div>
+                <div class="divider"></div>
+                <ul class="features-list">
+                    <li><strong>20</strong> Projects</li>
+                    <li><strong>20</strong> Pages</li>
+                    <li><strong>200</strong> Mb Disk Space</li>
+                </ul>
+                <a href="#" class="btn-buy">BUY NOW</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>ADVANCED</span>
+            </div>
+            <div class="card-body">
+                <div class="price-box">
+                    <span class="currency">$</span>
+                    <span class="amount">12</span>
+                    <span class="period">/ month</span>
+                </div>
+                <div class="divider"></div>
+                <ul class="features-list">
+                    <li><strong>40</strong> Projects</li>
+                    <li><strong>40</strong> Pages</li>
+                    <li><strong>500</strong> Mb Disk Space</li>
+                </ul>
+                <a href="#" class="btn-buy">BUY NOW</a>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>How does free trial work?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a diam nec augue tincidunt accumsan. In dignissim laoreet ipsum eu interdum.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I cancel any time?</h3>
+                <p>Aliquam erat volutpat. Etiam luctus massa ex, at tempus tellus blandit quis. Sed quis neque tellus. Donec maximus ipsum in malesuada hendrerit.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const buyButtons = document.querySelectorAll('.btn-buy');
+
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+
+                const planName = this.closest('.card').getAttribute('data-plan');
+                alert('Success');
+            });
+        });
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                cards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+
+</body>
+</html>
